@@ -8,7 +8,7 @@ function App() {
     <>
       <div className={`d-flex flex-column ${style.appContainer}`}>
         <Header />
-        <Content />
+        {/* <Content />  */}
         <Footer />
       </div>
     </>

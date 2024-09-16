@@ -11,13 +11,21 @@
 }
 
 .flex-fill {
+  /* voir détails */
   flex: 1 1 auto;
 }
 
-.justify-content {
+.justify-content-center {
   justify-content: center;
 }
 
-.align-items {
+.align-items-center {
   align-items: center;
 }
+
+// * détails
+
+// •	flex: 1 1 auto; est une forme abrégée pour définir trois propriétés liées à la flexibilité d’un élément :
+// 1.	flex-grow (valeur 1) : Cela signifie que l’élément peut croître et occuper l’espace disponible dans le conteneur. S’il y a de l’espace libre après avoir pris en compte la taille des autres éléments, l’élément avec flex-grow: 1 s’étendra pour occuper cet espace.
+// 2.	flex-shrink (valeur 1) : Cela indique que l’élément peut rétrécir si nécessaire lorsque l’espace devient limité. Si la largeur du conteneur diminue, l’élément peut se réduire proportionnellement.
+// 3.	flex-basis (valeur auto) : Cela détermine la taille initiale de l’élément avant que l’espace disponible ou l’espace manquant ne soit distribué. auto signifie que la taille initiale de l’élément sera basée sur son contenu ou toute autre largeur définie, si c’est le cas (par exemple, via width ou height).
