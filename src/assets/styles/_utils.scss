@@ -31,6 +31,9 @@
 .mb-20 {
   margin-bottom: 20px;
 }
+.mt-20 {
+  margin-top: 20px;
+}
 .m-30 {
   margin: 30px;
 }
@@ -39,4 +42,10 @@
 }
 .mr-15 {
   margin-right: 15px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
 }
