@@ -1,13 +1,11 @@
 // * concerne les éléments HTML de base
 
 body {
-  :root {
-    margin: 0;
-    font-family: var(--font-family);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: var(--text-color);
-  }
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
 }
 
 h1,
