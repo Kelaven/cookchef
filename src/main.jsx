@@ -6,7 +6,7 @@ import { ApiContext } from "./context/apiContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ApiContext.Provider value="/data/recipes.json">
+    <ApiContext.Provider value="https://restapi.fr/api/recipes">
       <App />
     </ApiContext.Provider>
   </StrictMode>

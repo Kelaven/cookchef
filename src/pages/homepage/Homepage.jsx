@@ -31,9 +31,15 @@ function Homepage() {
     }
     fetchRecipes();
     return () => (cancel = true); // clean up. La variable est définie à false au départ. Si le composant est démonté, la fonction de nettoyage (return) modifie cancel à true, et ainsi, si la requête est toujours en cours, les états ne seront pas mis à jour, évitant des erreurs ou des comportements inattendus.
-  }, []);
+  }, [BASE_URL_API]);
 
-  // const recipes = data;
+  function updateRecipe(updatedRecipe) {
+    setRecipes(
+      recipes.map(
+        (recipe) => (recipe._id === updatedRecipe._id ? updatedRecipe : recipe) // Si les deux ID correspondent, la recette actuelle est remplacée par la recette mise à jour (updatedRecipe). Sinon, elle conserve la recette d’origine (recipe).
+      )
+    );
+  }
 
   function handleInput(e) {
     const filter = e.target.value;
@@ -68,8 +74,12 @@ function Homepage() {
               .map((recipe) => (
                 <Recipe
                   key={recipe._id}
-                  title={recipe.title}
-                  img={recipe.img}
+                  // title={recipe.title}
+                  // img={recipe.img}
+                  // liked={recipe.liked}
+                  // _id={recipe._id}
+                  recipe={recipe}
+                  toggleLikeRecipe={updateRecipe}
                 />
               ))}
           </div>
