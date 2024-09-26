@@ -1,19 +1,21 @@
 import styles from "./Homepage.module.scss";
 import Recipe from "./components/recipe/Recipe";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loading from "../../components/loading/Loading";
+import { ApiContext } from "../../context/apiContext";
 
 function Homepage() {
   const [filter, setFilter] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const BASE_URL_API = useContext(ApiContext);
 
   useEffect(() => {
     let cancel = false;
     async function fetchRecipes() {
       try {
         setIsLoading(true);
-        const response = await fetch("/data/recipes.json");
+        const response = await fetch(BASE_URL_API);
         if (response.ok && !cancel) {
           // cancel est initialisé à false. Donc au début, !cancel est équivalent à true, ce qui permet au code à l’intérieur du bloc de s’exécuter. Si le composant est démonté, cancel devient true, et !cancel deviendra false, bloquant l’exécution de cette partie du code.
           const recipes = await response.json();
